@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package unaryCalc;
+
+option go_package = "github.com/jhowilbur/grpc-project/unaryCalc/proto";
+
+message SumRequest {
+  int64 numberOne = 1;
+  int64 numberTwo = 2;
+}
+
+message SumResponse {
+  int64 result = 1;
+}
+
+service SumService {
+  rpc Sum(SumRequest) returns (SumResponse);
+}
